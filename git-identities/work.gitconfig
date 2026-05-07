@@ -1,0 +1,13 @@
+[user]
+	name = PLACEHOLDER
+	email = PLACEHOLDER
+	signingkey = ~/.config/git-identities/keys/work_signing.pub
+
+[commit]
+	gpgsign = true
+
+[gpg]
+	format = ssh
+
+[gpg "ssh"]
+	allowedSignersFile = ~/.config/git-identities/allowed_signers

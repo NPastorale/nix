@@ -1,0 +1,10 @@
+[user]
+	name = NPastorale
+	email = npastorale@gmail.com
+	signingkey = 19F79A0DC23F20AB
+
+[commit]
+	gpgsign = true
+
+[gpg]
+	format = openpgp

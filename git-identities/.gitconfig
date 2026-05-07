@@ -1,0 +1,16 @@
+[user]
+	name = NPastorale
+	email = npastorale@gmail.com
+	signingkey = 19F79A0DC23F20AB
+
+[core]
+	excludesfile = ~/.config/git/ignore
+
+[includeIf "gitdir:~/git/NPastorale/"]
+	path = ~/.config/git-identities/personal.gitconfig
+
+[includeIf "gitdir:~/git/work/"]
+	path = ~/.config/git-identities/work.gitconfig
+
+[log]
+	showSignature = true
