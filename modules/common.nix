@@ -6,21 +6,39 @@
     "flakes"
   ];
 
+  # Fallback for when update.sh isn't run: keep only the current generation.
+  # Runs as root, so user/home-manager generations are only cleaned by update.sh.
+  nix.gc = {
+    automatic = true;
+    options = "--delete-old";
+  };
+
+  # Dedup via hard links. Preferred over nix.settings.auto-optimise-store,
+  # which is unreliable on macOS.
+  nix.optimise.automatic = true;
+
   environment.variables.EDITOR = "nvim";
 
   environment.systemPackages =
     with pkgs;
     [
+      ansible
       bat
       btop
       bun
+      claude-code
+      docker
+      docker-credential-helpers
       gh
       git
+      git-lfs
       gnupg
       go
+      gopls
       grpcurl
       kind
       kubectl
+      kubectl-cnpg
       kubernetes-helm
       mpv
       mtr

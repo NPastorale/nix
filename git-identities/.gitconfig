@@ -1,5 +1,5 @@
 [user]
-	name = NPastorale
+	name = Nahuel Pastorale
 	email = npastorale@gmail.com
 	signingkey = 19F79A0DC23F20AB
 
@@ -14,3 +14,9 @@
 
 [log]
 	showSignature = true
+
+[filter "lfs"]
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process

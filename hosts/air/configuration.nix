@@ -25,20 +25,21 @@
     casks = [
       "aws-vpn-client"
       "bambu-studio"
+      "docker-desktop"
       "elgato-stream-deck"
       "elgato-wave-link"
       "firefox"
       "freelens"
+      "ghostty"
       "google-chrome"
-      "hiddenbar"
       "keepassxc"
-      "orbstack"
       "protonvpn"
       "slack"
       "steam"
       "syncthing-app"
       "tailscale-app"
       "tidal"
+      "unnaturalscrollwheels"
       "utm"
       "visual-studio-code"
       "wireshark-app"
@@ -86,7 +87,7 @@
       on-window-detected = [
         {
           "if" = {
-            app-name-regex-substring = "Terminal|iTerm|kitty|Alacritty|WezTerm|Warp";
+            app-name-regex-substring = "Terminal|iTerm|kitty|Alacritty|WezTerm|Warp|Ghostty";
           };
           run = "move-node-to-workspace 1";
         }
@@ -225,6 +226,10 @@
 
     };
   };
+
+  # home-manager.users.nahue.services.colima = {
+  #   enable = true;
+  # };
 
   system.defaults = {
     NSGlobalDomain.AppleShowAllExtensions = false;

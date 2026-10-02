@@ -19,6 +19,7 @@ in
     stateVersion = "25.11";
     sessionVariables = {
       NIX_FLAKE_DIR = "$HOME/Nix";
+      CONTEXT7_API_KEY = "PLACEHOLDER";
     };
   };
 

@@ -60,5 +60,19 @@ case "$HOSTNAME" in
 esac
 
 print_header "Garbage collection"
-print_step "Deleting old generations and unused store paths"
+STORE_BEFORE=$(du -sk /nix/store 2>/dev/null | cut -f1 || echo 0)
+
+# -d drops old generations of the invoking user's profiles, then runs the GC,
+# so a separate `nix store gc` afterwards would be a no-op.
+print_step "Deleting old user/home-manager generations"
 nix-collect-garbage -d -vv
+
+print_step "Deleting old system/root generations and unused store paths"
+sudo -H nix-collect-garbage -d -vv
+
+print_header "Store optimisation"
+print_step "Hard-linking duplicate files in the store"
+sudo -H nix store optimise
+
+STORE_AFTER=$(du -sk /nix/store 2>/dev/null | cut -f1 || echo 0)
+print_step "Store size: $((STORE_BEFORE / 1024)) MiB -> $((STORE_AFTER / 1024)) MiB"
