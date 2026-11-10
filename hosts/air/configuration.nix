@@ -33,8 +33,10 @@
       "ghostty"
       "google-chrome"
       "keepassxc"
+      "kicad"
       "protonvpn"
       "slack"
+      "spotify"
       "steam"
       "syncthing-app"
       "tailscale-app"
@@ -42,6 +44,7 @@
       "unnaturalscrollwheels"
       "utm"
       "visual-studio-code"
+      "vorssaint"
       "wireshark-app"
     ];
   };

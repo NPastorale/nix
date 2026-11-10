@@ -26,7 +26,6 @@
       bat
       btop
       bun
-      claude-code
       docker
       docker-credential-helpers
       gh
@@ -34,6 +33,7 @@
       git-lfs
       gnupg
       go
+      google-cloud-sdk
       gopls
       grpcurl
       kind
@@ -47,6 +47,7 @@
       nodejs
       opencode
       procps
+      resvg
       talosctl
       terraform
       vault
